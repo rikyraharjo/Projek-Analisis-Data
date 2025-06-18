@@ -9,7 +9,7 @@ st.set_page_config(page_title="Bike Sharing Dashboard", layout="wide")
 # Load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("dashboard/day.csv")  # kamu bisa copy day.csv sebagai main_data.csv
+    df = pd.read_csv("day.csv")
     df['dteday'] = pd.to_datetime(df['dteday'])
     df['season_label'] = df['season'].map({1: 'Spring', 2: 'Summer', 3: 'Fall', 4: 'Winter'})
     df['weather_label'] = df['weathersit'].map({
